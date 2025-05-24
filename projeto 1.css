@@ -1,0 +1,175 @@
+/*A estrutura do css é composta: pela identificação do elemento seguido de chaves, e por fim dentro das chaves você escolhe o atributo que deseja modificar seguido do parâmetro. Ex.: 
+p{font-size:16px;
+    color: red;
+}   
+Sempre eu preciso terminar os comandos com ;*/
+/*Medidas Absolutas - ou seja fixas
+    px pixels
+    cm centimetros
+    mm milímetros
+Medidas relativas - ou seja que se ajustam
+    rem - se ajusta de acordo com o tamanho da fonte html
+    % - relativo ao tamanho do elemento pai / tela
+*/
+
+.ferias{
+    /*Alterando a largura da imagem*/
+    width: 50%;
+    /*Alterando a altura da imagem*/
+    height: 50%;
+}
+img{
+   /*alterando a largura da imagem*/
+    width: 100%;
+    max-width: 600px;
+    /*alterando a altura da img*/
+    height: auto;/*manter a proporção*/
+    border-radius: 12px;
+    margin: 10px 0px;
+}
+tr,td{
+   /*definindo tipo e espessura da borda*/
+    border: 1px solid;
+    /*definindo a cor da cor da borda das linhas e colunas da tabela*/
+    border-color: black;
+    /*ajustando a largura*/
+    width: 40%;
+}
+td{
+    width: 40%;
+    text-align: center;
+}
+.linha1{
+    background-color: #88f8cb; /*trocar a cor de fundo*/
+    text-align: center; /*alinha no centro*/
+    color: black; /*troca a cor da linha*/
+}
+body{
+    background-image:linear-gradient(to bottom,#81A0F7,#A5A1F7,#5EB6F5);/*Criamos um gradiente para a pg web. formas de aplicação left, right, top, bottom*/
+    font-family: sans-serif, 'Times New Roman', Times, serif;
+    line-height: 1.6;/*espaçamento entre as linhas*/
+    padding: 20px;/*Espaçamento interno nas bordas*/
+}
+p{
+    font-size: 19px;
+}
+li{
+    font-size: 19px;
+}
+/*Estilos do títulos principal da pg*/
+h1{
+    text-align: center;/*centraliza o texto*/
+    color: rosybrown;/*aplica cor laranja*/
+    font-size: 3rem;/*altera o tamanho*/
+    margin-bottom: 30px;/*espaço abixo do título*/
+}
+h3,h4{
+    text-align: center;
+    color: rgb(255, 252, 94);
+    margin-top: 20px;
+}
+a{
+    color: #3358fa;
+    text-decoration: none;
+}
+a:hover{
+    height: 100%;
+    width: 100%;
+    text-decoration: underline;/*add um traço abaixo do link quando o mouse estiver sobre ele*/
+}
+ol,ul{
+    padding: 15px, 10px;
+    border-radius: 10px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;/*juntar as bordas da tabela*/
+    background-color: #a5a1f8;
+    margin-top: 20px;/*espaço acima da tabela*/
+}
+table td{
+    border: 1px solid #000;/*borda de 1px de largura, linha contínua e cor cinza*/
+    text-align: center;    
+    color: whitesmoke;
+}
+.card{
+    background-color:#ddd;
+    border-radius: 15px;
+    margin: 20px auto;
+    overflow: hidden;/*Ocultar o passar dos limites do card*/
+    display: inline-block;/*coloca os cards lado a lado*/
+    vertical-align: top;/*alinha os cards pelo topo*/
+    height: 700px;/*define a altura dos cards*/
+    transition: transform 0.3s ease-in-out;/*Animação na interação com os cards*/
+}
+.card:hover{
+    transform: scale(1.03);/*aumento em 3% o tamanho do card*/
+}
+.card-body{
+    font-size: 1rem;
+}
+.card-title{
+    font-size: 1.5rem;
+    color: rgb(7, 87, 7);
+    margin-bottom: 10px;
+   text-align: center;
+}
+.card-text{
+    margin-left: 10px;
+    color: #444; 
+}
+.card-img-top{
+    width: 90%;
+    height: 20%;
+}
+.btn-primary{
+    background-color: #009688;/*cor de fundo*/
+    color: white;/*cor da letra*/
+    padding: 10px 16px;/*espaço interno na horizontal e vertical*/
+    border-radius: 10px;/*arredondamento do texto*/
+    text-align: center;/*centralizar o texto*/
+    margin-left: 15px;/*espaço externo entre as bordas do botão e o limite do card*/
+}
+.btn-primary:hover{
+    background-color: #6FA6F7;
+    color: #000;
+    text-decoration: none;
+}
+/*responsividade*/
+/*telas pequenas*/
+@media(max-width:768px){
+    .card{
+        width: 90px;
+        margin: 20px auto;
+    }
+}
+/*escondendo o checkbox da tela*/
+#menu{
+    display: none;/*o checkbox não vai mais aparecer*/
+}
+/*estilizar o botão (label)*/
+.menuicone{
+    display: block;/*exibe como um bloco em uma linha*/
+    background-color: bisque;
+    color: black;
+    padding: 10px;
+    cursor: pointer;/*cursor vira uma "mãozinha" ao passar o mouse*/
+    width: fit-content;/*ajusta a largura ao tamanho do conteúdo*/
+}
+/*ocultando os itens do menu*/
+.mobile-menu{
+    display: none;
+    flex-direction: column;/*os itens vão ser mostrados (quando mostrados) de forma vertical*/
+    background-color: rgb(138, 245, 213);
+}
+.mobile-menu a{
+    color: black;
+    padding: 5px;
+    border-top: 1px solid black;/*linha separada entre os itens - aplica borda superior aos elementos*/
+    text-decoration: none;
+}
+/*regra que exibe o menu quando o checkbox é marcado*/
+#menu:checked + .menuicone + .mobile-menu{
+    display: flex;
+}
+
